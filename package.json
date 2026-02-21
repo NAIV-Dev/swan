@@ -1,0 +1,50 @@
+{
+  "name": "@naiv/swan",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc && npm unlink -g && npm link",
+    "start": "node dist",
+    "dev": "npm run build && npm start",
+    "test": "rm -rf test/api && npm run build && swan -d test -o test"
+  },
+  "bin": {
+    "swan": "dist/exec.js"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "SWAN-DSL.md"
+  ],
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/moment": "^2.11.29",
+    "@types/node": "^25.3.0",
+    "@types/yargs": "^17.0.35",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@graf-research/llm-runner": "^0.0.21",
+    "@naiv/react-bundler": "^0.0.6",
+    "@naiv/swan-dsl": "^0.0.3",
+    "axios": "^1.13.5",
+    "cors": "^2.8.6",
+    "enquirer": "^2.4.1",
+    "express": "^5.2.1",
+    "glob": "^13.0.6",
+    "listr2": "^10.1.0",
+    "moment": "^2.30.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.0",
+    "yargs": "^18.0.0"
+  }
+}
