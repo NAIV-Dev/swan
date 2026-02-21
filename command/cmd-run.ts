@@ -32,7 +32,7 @@ export async function cmdRun(port: number, swan_cwd: string, apiurl: string, llm
 
   const swan_content_string = await fs.promises.readFile(web_specs, 'utf-8');
   const res = parse(swan_content_string);
-  await (new SWANServer({ swanCwd: working_directory }).run({
+  await (new SWANServer({ swanCwd: working_directory, llm_model }).run({
     swan_result: res!,
     swan_content_string,
     port
